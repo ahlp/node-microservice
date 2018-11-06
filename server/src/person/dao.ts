@@ -3,11 +3,11 @@ import Person from '../data/person.model';
 
 const sequelize =  new Sequelize({
   database: 'some_db',
-  dialect: 'sqlite',
+  dialect: 'mysql',
   username: 'root',
-  password: 'rootpassword',
-  host: 'localhost',
-  storage: ':memory:',
+  password: 'test_pass',
+  host: 'db',
+  storage: 'mysql',
 });
 
 // sequelize.addModels([Person]);
