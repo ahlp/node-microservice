@@ -1,15 +1,24 @@
 version: '0.1'
 
 services:
-  server:
-    build: .
+  frontend-person:
+    build: ./frontend
+    links:
+      - server-person
+    ports:
+     - "80:80"
+  server-person:
+    build: ./server
+    links:
+      - db-person
     ports:
      - "8080:8080"
-  db:
+  db-person:
     container_name: mysql
-    image: mysql:5.5
+    image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: 'test_pass'
+      MYSQL_DATABASE: 'some_db'
       # MYSQL_USER: 'root'
       # MYSQL_PASS: 'pass'
     ports:
