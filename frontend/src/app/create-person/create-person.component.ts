@@ -14,7 +14,7 @@ export class CreatePersonComponent {
     { name: 'cpf', value: null }
   ];
 
-  url = 'localhost:8080';
+  url = 'localhost:8080/person';
 
   constructor(private http: HttpClient) { }
 

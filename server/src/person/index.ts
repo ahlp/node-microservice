@@ -6,4 +6,5 @@ export = function(router: Router) {
   const controller = new Controller();
   console.log('routing ');
   router.setRoute('/person', controller.get);
+  router.setPostRoute('/person', controller.create);
 }

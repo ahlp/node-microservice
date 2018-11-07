@@ -9,6 +9,10 @@ class Router {
   setRoute (route: string, handler: ((req: Request, res: Response) => Promise<any>)): void {
     this.app.get(route, handler);
   }
+
+  setPostRoute (route: string, handler: ((req: Request, res: Response) => Promise<any>)): void {
+    this.app.post(route, handler);
+  }
 }
 
 // function Router (app : Express) {

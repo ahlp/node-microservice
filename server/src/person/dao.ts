@@ -6,7 +6,7 @@ const sequelize =  new Sequelize({
   dialect: 'mysql',
   username: 'root',
   password: 'test_pass',
-  host: 'db-person',
+  host: 'localhost',
   port: 3306,
   storage: 'mysql',
 });
@@ -24,7 +24,13 @@ class Dao {
   }
 
   async getAll() {
-    return (await this.db.find()) || [];
+    return (await this.db.findAll()) || [];
+  }
+
+  async create(person: Object) {
+    console.log('try create');
+    console.log(JSON.stringify(person));
+    await this.db.create(person);
   }
 }
 
