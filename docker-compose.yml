@@ -1,19 +1,17 @@
 version: '0.1'
 
 services:
-  frontend-person:
+  frontend-cadastro:
     build: ./frontend
-    links:
-      - server-person
     ports:
      - "80:80"
-  server-person:
+  server-cadastro:
     build: ./server
     links:
-      - db-person
+      - db-cadastro
     ports:
      - "8080:8080"
-  db-person:
+  db-cadastro:
     container_name: mysql
     image: mysql:5.7
     environment:
@@ -25,3 +23,25 @@ services:
       - "3306:3306"
     volumes:
       - /opt/mysql_data:/var/lib/mysql
+  frontend-materia:
+    build: ./frontend.1
+    ports:
+     - "8000:80"
+  server-materia:
+    build: ./server-1
+    links:
+      - db-materia
+    ports:
+     - "8081:8080"
+  db-materia:
+    container_name: mysql-materia
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: 'test_pass'
+      MYSQL_DATABASE: 'some_db'
+      # MYSQL_USER: 'root'
+      # MYSQL_PASS: 'pass'
+    ports:
+      - "3307:3306"
+    volumes:
+      - /opt/mysql_data2/:/var/lib/mysql

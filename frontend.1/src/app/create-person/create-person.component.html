@@ -1,0 +1,12 @@
+
+<li>
+  <ul *ngFor="let field of fields">
+    <a>
+      {{ field.name }}
+    </a>
+    <input type="text" [(ngModel)]="field.value">
+  </ul>
+  <button (click)="createAluno()">
+    Submit
+  </button>
+</li>

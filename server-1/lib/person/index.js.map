@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../src/person/index.ts"],"names":[],"mappings":";;;;AACA,8DAAsC;AAGtC,iBAAS,UAAS,MAAc;IAC9B,MAAM,UAAU,GAAG,IAAI,oBAAU,EAAE,CAAC;IACpC,OAAO,CAAC,GAAG,CAAC,UAAU,CAAC,CAAC;IACxB,MAAM,CAAC,QAAQ,CAAC,SAAS,EAAE,UAAU,CAAC,GAAG,CAAC,CAAC;AAC7C,CAAC,CAAA"}

@@ -6,7 +6,7 @@ const sequelize =  new Sequelize({
   dialect: 'mysql',
   username: 'root',
   password: 'test_pass',
-  host: 'db-cadastro',
+  host: 'db-materia',
   port: 3306,
   storage: 'mysql',
 });
