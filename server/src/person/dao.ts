@@ -1,29 +1,21 @@
-import Sequelize from 'sequelize';
 import Person from '../data/person.model';
-
-const sequelize =  new Sequelize({
-  database: 'some_db',
-  dialect: 'mysql',
-  username: 'root',
-  password: 'test_pass',
-  host: 'db',
-  storage: 'mysql',
-});
+import Sequelize from 'sequelize';
+import Database from '../database';
 
 // sequelize.addModels([Person]);
 // sequelize.addModels(['../data']);
 
 class Dao {
 
-  db: Sequelize.Model<any, any>;
+  private person: Sequelize.Model<{}, {}>;
   constructor() {
     console.log('setting dao');
-    this.db = sequelize.define(Person.modelName, Person.attributes, Person.options);
-    this.db.sync();
+    this.person = Database.getModelInstance(Person);
+    this.person.sync();
   }
 
   async getAll() {
-    return (await this.db.find()) || [];
+    return (await this.person.find()) || [];
   }
 }
 

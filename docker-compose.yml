@@ -2,17 +2,20 @@ version: '0.1'
 
 services:
   server:
-    build: .
+    build: ./server/
     ports:
      - "8080:8080"
   db:
-    container_name: mysql
-    image: mysql:5.5
+    container_name: db
+    image: postgres:11-alpine
     environment:
-      MYSQL_ROOT_PASSWORD: 'test_pass'
+      POSTGRES_USER: 'root'
+      POSTGRES_PASSWORD: 'test_pass'
+      POSTGRES_DB: 'some_db'
+      # MYSQL_ROOT_PASSWORD: 'test_pass'
       # MYSQL_USER: 'root'
       # MYSQL_PASS: 'pass'
     ports:
-      - "3306:3306"
+      - "5432:5432"
     volumes:
       - /opt/mysql_data:/var/lib/mysql
