@@ -9,7 +9,6 @@ class Dao {
 
   private person: Sequelize.Model<{}, {}>;
   constructor() {
-    console.log('setting dao');
     this.person = Database.getModelInstance(Person);
     this.person.sync();
   }

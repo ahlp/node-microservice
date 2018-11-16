@@ -9,7 +9,8 @@ class MethodFactory {
         dialect: 'postgres',
         username: 'root',
         password: 'test_pass',
-        host: 'localhost',
+        host: 'db',
+        port: 5432,
         storage: 'postgres',
       });;
     }
